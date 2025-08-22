@@ -7,9 +7,7 @@
     "light": "#07C983",
     "dark": "#15803D"
   },
-  "fonts": {
-    "family": "Open Sans"
-  },
+
   "favicon": "/better-flow.svg",
   "navigation": {
     "tabs": [
