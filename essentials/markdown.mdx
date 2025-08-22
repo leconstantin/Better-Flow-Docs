@@ -1,7 +1,8 @@
 ---
-title: 'Markdown syntax'
-description: 'Text, title, and styling in standard markdown'
-icon: 'text-size'
+title: "Markdown syntax"
+description: "Text, title, and styling in standard markdown"
+icon: "text-size"
+sidebarTitle: "Sample"
 ---
 
 ## Titles
@@ -11,6 +12,51 @@ Best used for section headers.
 ```md
 ## Titles
 ```
+
+<AccordionGroup>
+  <Accordion title="Getting started">
+    You can put other components inside Accordions.
+
+    ```java HelloWorld.java
+    class HelloWorld {
+        public static void main(String[] args) {
+            System.out.println("Hello, World!");
+        }
+    }
+    ```
+
+  </Accordion>
+
+{" "}
+
+<Accordion title="Advanced features" icon="alien-8bit">
+  Add icons to make accordions more visually distinct and scannable.
+</Accordion>
+
+  <Accordion title="Troubleshooting">
+    Keep related content organized into groups.
+  </Accordion>
+</AccordionGroup>
+
+<CodeGroup>
+
+```javascript helloWorld.js
+console.log("Hello World");
+```
+
+```python hello_world.py
+print('Hello World!')
+```
+
+```java HelloWorld.java {3}
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+```
+
+</CodeGroup>
 
 ### Subtitles
 
