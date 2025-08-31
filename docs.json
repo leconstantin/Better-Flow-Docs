@@ -3,40 +3,42 @@
   "theme": "mint",
   "name": "Better Flow",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#000000",
+    "light": "#ebff0a",
+    "dark": "#222222"
   },
-
-  "favicon": "/better-flow.svg",
+  "favicon": "/logo.png",
   "navigation": {
     "tabs": [
       {
         "tab": "Guides",
         "groups": [
           {
-            "group": "Getting started",
-            "pages": ["index", "quickstart", "development"]
+            "group": "Introduction",
+            "pages": ["index", "privacy", "faq"]
           },
           {
-            "group": "Customization",
-            "pages": ["essentials/settings", "essentials/navigation"]
-          },
-          {
-            "group": "Writing content",
+            "group": "Interfaces",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
+              "interfaces/dashboard",
+              "interfaces/editor",
+              "interfaces/activity",
+              "interfaces/chat",
+              "interfaces/analytics",
+              "interfaces/notifications",
+              "interfaces/search",
+              "interfaces/settings"
             ]
           },
+
           {
-            "group": "AI tools",
+            "group": "Features",
             "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+              "features/chat",
+              "features/tasks",
+              "features/storage",
+              "features/analytics",
+              "features/collaborative-editing"
             ]
           }
         ]
@@ -64,25 +66,25 @@
       "anchors": [
         {
           "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
+          "href": "https://docs.rathon-rw.com/",
           "icon": "book-open-cover"
         },
         {
           "anchor": "Community",
-          "href": "https://mintlify.com/community",
+          "href": "https://better-flow-web.vercel.app/community",
           "icon": "slack"
         },
         {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "Website",
+          "href": "https://better-flow-web.vercel.app/",
+          "icon": "globe"
         }
       ]
     }
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo.png",
+    "dark": "/logo.png"
   },
   "navbar": {
     "links": [
@@ -93,8 +95,8 @@
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Start for free",
+      "href": "https://better-flow-web.vercel.app/pricing"
     }
   },
   "contextual": {
