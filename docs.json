@@ -44,6 +44,22 @@
         ]
       },
       {
+        "tab": "Components",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "components/installation",
+              "components/layout",
+              "components/features",
+              "components/tiptap",
+              "components/pages",
+              "components/styles"
+            ]
+          }
+        ]
+      },
+      {
         "tab": "API reference",
         "groups": [
           {
