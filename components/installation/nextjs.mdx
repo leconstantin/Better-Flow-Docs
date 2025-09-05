@@ -1,0 +1,94 @@
+---
+title: "Next.Js"
+description: "Install and configure shadcn/ui for Next.js."
+---
+
+### Create project
+
+Run the `init` command to create a new Next.js project or to setup an existing one:
+
+<CodeGroup>
+
+```bash npm
+npx create-next-app@latest .
+```
+
+```bash pnpm
+pnpm create next-app@latest .
+```
+
+```bash yarn
+yarn create next-app@latest .
+```
+
+```bash bun
+bun create next-app@latest .
+```
+
+</CodeGroup>
+
+<Warning>Don't select turbopack, We currently not supporting it</Warning>
+
+### Steps
+
+You can follow the following steps if you are not sure the next step:
+
+<Steps>
+  <Step title="First Step">
+    After running that link in your IDE, you will be asked if you want to
+    install nextjs package click `y` on your keyboard.
+  </Step>
+  <Step title="Second Step">
+    You will be asked to choose `Yes` or `No` for **Typescript**, we recommend
+    you to choose Yes for better experience.
+  </Step>
+  <Step title="Third Step">
+    You will be asked `Which linter would you like to use?` between **Biome**,
+    **ESLint**, Or None, There choose the one you want but we recommend you to
+    choose **Biome**
+  </Step>
+  <Step title="Forth Step">
+    You will be asked if you `Would you like to use Tailwind CSS?` here we
+    recommend you to choose **Yes**
+  </Step>
+  <Step title="Fifth Step">
+    You will be asked if you `Would you like your code inside a `src/`
+    directory? ` here we recommend you to choose **No**
+  </Step>
+  <Step title="Sixth Step">
+    You will be asked if you `Would you like to use App Router?` here we
+    recommend you to choose **Yes**
+  </Step>
+  <Step title="Seventh Step">
+    You will be asked if you `Would you like to use Turbopack?` here we
+    recommend you to choose **No** as we said it in warning above.
+  </Step>
+  <Step title="Last Step">
+    You will be asked if you `Would you like to customize the import alias
+    (`@/*` by default)?` here we recommend you to choose **No**
+  </Step>
+</Steps>
+
+### Initialize shadcn
+
+Run the `init` command to create a new Next.js project or to setup an existing one:
+
+<CodeGroup>
+
+```bash npm
+npx shadcn@latest init
+```
+
+```bash pnpm
+pnpm dlx shadcn@latest init
+```
+
+```bash yarn
+yarn shadcn@latest init
+```
+
+```bash bun
+bunx --bun shadcn@latest init
+```
+
+</CodeGroup>
