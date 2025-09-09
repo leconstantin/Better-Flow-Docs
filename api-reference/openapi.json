@@ -1,8 +1,8 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "OpenAPI Articles",
-    "description": "A sample API that uses a plant store as an example to demonstrate features in the OpenAPI specification",
+    "title": "Better Flow Articles",
+    "description": "An API for managing articles in Better Flow, including drafting, reviewing, publishing, and archiving.",
     "license": {
       "name": "MIT"
     },
@@ -96,6 +96,352 @@
         }
       }
     },
+    "/images": {
+      "get": {
+        "description": "Returns all media items available in the system",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "The maximum number of results to return",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Media response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Media"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "description": "Creates a new media item in the system",
+        "requestBody": {
+          "description": "Media object to add",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Media"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Media response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Media"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/audios": {
+      "get": {
+        "description": "Returns all audios items available in the system",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "The maximum number of results to return",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Audio response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Media"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "description": "Creates a new audio item in the system",
+        "requestBody": {
+          "description": "Audio object to add",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Media"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Audio response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Media"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/videos": {
+      "get": {
+        "description": "Returns all videos items available in the system",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "The maximum number of results to return",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Video response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Media"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "description": "Creates a new video item in the system",
+        "requestBody": {
+          "description": "Video object to add",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Media"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Video response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Media"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/members": {
+      "get": {
+        "description": "Returns all members from the system",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "The maximum number of results to return",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Members response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Member"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "description": "Creates a new member in the system",
+        "requestBody": {
+          "description": "Member object to add",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Member"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Member response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Member"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/members/{id}": {
+      "get": {
+        "description": "Returns a single member by ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "The ID of the member to retrieve",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Single member response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Member"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Member not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/plants/{id}": {
       "delete": {
         "description": "Deletes a single plant based on the ID supplied",
@@ -125,28 +471,6 @@
                 }
               }
             }
-          }
-        }
-      }
-    }
-  },
-  "webhooks": {
-    "/plant/webhook": {
-      "post": {
-        "description": "Information about a new plant added to the store",
-        "requestBody": {
-          "description": "Plant added to the store",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NewPlant"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Return a 200 status to indicate that the data was received successfully"
           }
         }
       }
@@ -206,6 +530,108 @@
           "publishedAt": {
             "description": "Timestamp when the article was published",
             "type": "integer"
+          }
+        }
+      },
+      "Media": {
+        "required": ["title", "slug", "url", "createdAt"],
+        "type": "object",
+        "properties": {
+          "title": {
+            "description": "Title of the media item",
+            "type": "string"
+          },
+          "slug": {
+            "description": "Unique identifier for the media item",
+            "type": "string"
+          },
+          "description": {
+            "description": "Optional description of the media item",
+            "type": ["string", "null"]
+          },
+          "url": {
+            "description": "URL where the media file is stored",
+            "type": "string",
+            "format": "uri"
+          },
+          "createdAt": {
+            "description": "Timestamp when the media was created",
+            "type": "integer"
+          },
+          "group": {
+            "description": "Group or category the media belongs to",
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "Member": {
+        "required": ["id", "_creationTime"],
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "Unique identifier of the member",
+            "type": "string"
+          },
+          "avatarUrl": {
+            "description": "URL to the member's avatar image",
+            "type": ["string", "null"]
+          },
+          "_creationTime": {
+            "description": "Timestamp when the member was created",
+            "type": "integer"
+          },
+          "name": {
+            "description": "Full name of the member",
+            "type": "string"
+          },
+          "image": {
+            "description": "Profile image URL of the member",
+            "type": "string"
+          },
+          "email": {
+            "description": "Email address of the member",
+            "type": "string",
+            "format": "email"
+          },
+          "phone": {
+            "description": "Phone number of the member",
+            "type": "string"
+          },
+          "username": {
+            "description": "Unique username of the member",
+            "type": "string"
+          },
+          "bio": {
+            "description": "Short biography of the member",
+            "type": "string"
+          },
+          "role": {
+            "description": "Role of the member in the system",
+            "type": "string",
+            "enum": ["author", "admin", "media-manager", "ads-manager"]
+          },
+          "coverImage": {
+            "description": "URL to the member's cover image",
+            "type": "string"
+          },
+          "socialLinks": {
+            "description": "List of social links associated with the member",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["name", "url"],
+              "properties": {
+                "name": {
+                  "description": "Name of the social platform",
+                  "type": "string"
+                },
+                "url": {
+                  "description": "URL to the member's social profile",
+                  "type": "string",
+                  "format": "uri"
+                }
+              }
+            }
           }
         }
       },
