@@ -1,0 +1,31 @@
+---
+title: "Overview"
+description: "The Better Flow API allows you to seamlessly connect your application to Better Flow, giving you secure access to your data on the web."
+---
+
+## Accessing the API
+
+The Better Flow API is available via our [web console](https://your-console-link.com). You can try out API requests directly in the browser using our [Workbench](https://your-workbench-link.com) and generate API keys in [Account Settings](https://your-account-settings-link.com). Use [workspaces](https://your-workspaces-link.com) to organize your API keys and [control usage and limits](https://your-rate-limits-link.com) by project or use case.
+
+## Authentication
+
+All requests to the Better Flow API must include an `x-api-key` header with your API key. If you are using our Client SDKs, the API key is set when creating the client, and the SDK automatically includes the header with every request. If integrating directly with the API, you must include the header manually.
+
+## Content Types
+
+The Better Flow API accepts JSON in request bodies and returns JSON in responses. Ensure you send the `content-type: application/json` header in your requests. The Client SDKs handle this automatically.
+
+## Request Size Limits
+
+The API has a maximum request size of **32 MB** for standard endpoints. If you exceed this limit, you'll receive a `413 request_too_large` error. Specific endpoints may have different limits:
+
+- **Standard endpoints**: 32 MB
+- **Batch endpoints**: 256 MB
+- **File uploads**: 500 MB
+
+## Response Headers
+
+Every API response includes the following headers:
+
+- `request-id`: A globally unique identifier for the request.
+- `betterflow-organization-id`: The organization ID associated with the API key used for the request.
