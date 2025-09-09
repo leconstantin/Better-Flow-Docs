@@ -1,0 +1,63 @@
+---
+title: "Overview"
+description: "The Better Flow API allows you to seamlessly connect your application to Better Flow, giving you secure access to your data on the web."
+---
+
+## Accessing the API
+
+The API is made available via our web [Console](https://console.anthropic.com/). You can use the [Workbench](https://console.anthropic.com/workbench) to try out the API in the browser and then generate API keys in [Account Settings](https://console.anthropic.com/account/keys). Use [workspaces](https://console.anthropic.com/settings/workspaces) to segment your API keys and [control spend](/en/api/rate-limits) by use case.
+
+## Authentication
+
+All requests to the Anthropic API must include an `x-api-key` header with your API key. If you are using the Client SDKs, you will set the API when constructing a client, and then the SDK will send the header on your behalf with every request. If integrating directly with the API, you'll need to send this header yourself.
+
+## Content types
+
+The Anthropic API always accepts JSON in request bodies and returns JSON in response bodies. You will need to send the `content-type: application/json` header in requests. If you are using the Client SDKs, this will be taken care of automatically.
+
+## Request size limits
+
+The API has a maximum request size of 32 MB for standard endpoints, including the Messages API and Token Counting API. If you exceed this limit, you'll receive a 413 `request_too_large` error from Cloudflare. Specific endpoints have different limits:
+
+- **Standard endpoints** (Messages, Token Counting): 32 MB
+- **[Batch API](/en/docs/build-with-claude/batch-processing)**: 256 MB
+- **[Files API](/en/docs/build-with-claude/files)**: 500 MB
+
+## Response Headers
+
+The Anthropic API includes the following headers in every response:
+
+- `request-id`: A globally unique identifier for the request.
+
+- `anthropic-organization-id`: The organization ID associated with the API key used in the request.
+
+## Examples
+
+<Tabs>
+  <Tab title="curl">
+    ```bash Shell
+curl -X GET "https://api.betterflow.com/v1/articles" \
+  -H "Authorization: Bearer YOUR_API_TOKEN" \
+  -H "Content-Type: application/json"
+
+    ```
+
+  </Tab>
+
+  <Tab title="TypeScript">
+
+    ```TypeScript TypeScript lines
+      export async function getArticles(): Promise<TArticle[]> {
+      const res = await fetch(`${process.env.CONVEX_SITE_URL}/articles`, {
+      headers: {
+      Authorization: `Bearer ${process.env.ARTICLES_API_KEY}`,
+      },
+      });
+      const articles = await res.json();
+      if (!articles) return [];
+      return articles;
+      }
+      ```
+
+  </Tab>
+</Tabs>

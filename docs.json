@@ -64,15 +64,17 @@
         "groups": [
           {
             "group": "API documentation",
-            "pages": ["api-reference/introduction"]
+            "pages": ["api-reference/overview"]
           },
           {
             "group": "Endpoint examples",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "api-reference/endpoint/get-articles",
+              "api-reference/endpoint/get-images",
+              "api-reference/endpoint/get-audios",
+              "api-reference/endpoint/get-videos",
+              "api-reference/endpoint/get-staff",
+              "api-reference/endpoint/get-ads"
             ]
           }
         ]

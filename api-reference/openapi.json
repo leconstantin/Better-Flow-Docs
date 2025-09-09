@@ -1,7 +1,7 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "OpenAPI Plant Store",
+    "title": "OpenAPI Articles",
     "description": "A sample API that uses a plant store as an example to demonstrate features in the OpenAPI specification",
     "license": {
       "name": "MIT"
@@ -10,7 +10,7 @@
   },
   "servers": [
     {
-      "url": "http://sandbox.mintlify.com"
+      "url": "https://tacit-gecko-719.convex.site"
     }
   ],
   "security": [
@@ -19,9 +19,9 @@
     }
   ],
   "paths": {
-    "/plants": {
+    "/articles": {
       "get": {
-        "description": "Returns all plants from the system that the user has access to",
+        "description": "Returns all articles from the system that the public has access to",
         "parameters": [
           {
             "name": "limit",
@@ -35,13 +35,13 @@
         ],
         "responses": {
           "200": {
-            "description": "Plant response",
+            "description": "Articles response",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Plant"
+                    "$ref": "#/components/schemas/Articles"
                   }
                 }
               }
@@ -154,47 +154,63 @@
   },
   "components": {
     "schemas": {
-      "Plant": {
+      "Articles": {
         "required": [
-          "name"
+          "title",
+          "slug",
+          "coverImage",
+          "status",
+          "group",
+          "authorId",
+          "publishedAt"
         ],
         "type": "object",
         "properties": {
-          "name": {
-            "description": "The name of the plant",
+          "title": {
+            "description": "Title of the article",
             "type": "string"
           },
-          "tag": {
-            "description": "Tag to specify the type",
+          "slug": {
+            "description": "Unique identifier for the article",
             "type": "string"
+          },
+          "description": {
+            "description": "Short summary of the article",
+            "type": ["string", "null"]
+          },
+          "content": {
+            "description": "Full content of the article",
+            "type": ["string", "null"]
+          },
+          "words": {
+            "description": "Word count of the article",
+            "type": ["integer", "null"]
+          },
+          "coverImage": {
+            "description": "URL of the article’s cover image",
+            "type": "string"
+          },
+          "status": {
+            "description": "Current status of the article",
+            "type": "string",
+            "enum": ["draft", "staged", "approved", "published", "deleted"]
+          },
+          "group": {
+            "description": "Group or category the article belongs to",
+            "type": "string"
+          },
+          "authorId": {
+            "description": "ID of the author who wrote the article",
+            "type": "string"
+          },
+          "publishedAt": {
+            "description": "Timestamp when the article was published",
+            "type": "integer"
           }
         }
       },
-      "NewPlant": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/Plant"
-          },
-          {
-            "required": [
-              "id"
-            ],
-            "type": "object",
-            "properties": {
-              "id": {
-                "description": "Identification number of the plant",
-                "type": "integer",
-                "format": "int64"
-              }
-            }
-          }
-        ]
-      },
       "Error": {
-        "required": [
-          "error",
-          "message"
-        ],
+        "required": ["error", "message"],
         "type": "object",
         "properties": {
           "error": {
