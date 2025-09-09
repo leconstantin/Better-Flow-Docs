@@ -10,7 +10,14 @@
   },
   "servers": [
     {
-      "url": "https://tacit-gecko-719.convex.site"
+      "url": "{baseUrl}",
+      "description": "Better Flow API base URL",
+      "variables": {
+        "baseUrl": {
+          "default": "https://tacit-gecko-719.convex.site",
+          "description": "Enter your Better Flow site URL here"
+        }
+      }
     }
   ],
   "security": [
@@ -49,42 +56,6 @@
           },
           "400": {
             "description": "Unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "description": "Creates a new plant in the store",
-        "requestBody": {
-          "description": "Plant to add to the store",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NewPlant"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "plant response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Plant"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "unexpected error",
             "content": {
               "application/json": {
                 "schema": {
@@ -652,7 +623,9 @@
     "securitySchemes": {
       "bearerAuth": {
         "type": "http",
-        "scheme": "bearer"
+        "scheme": "bearer",
+        "bearerFormat": "JWT",
+        "description": "Provide your Better Flow API token here"
       }
     }
   }
