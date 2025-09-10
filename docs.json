@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Better Flowe",
+  "name": "Better Flow",
   "colors": {
     "primary": "#000000",
     "light": "#ebff0a",
